@@ -64,7 +64,7 @@ Contributions are welcome and encouraged.  You can contribute in many ways:
 
 * Documentation updates and corrections.
 * How-To guides - received help?  help others!
-* Bug fixes.
+* Bug fixes. test 0
 * New features.
 * Telling us your ideas and suggestions.
 * Buying your hardware from this [link](https://inavflight.com/shop/u/bg/)
