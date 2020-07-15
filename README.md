@@ -21,7 +21,7 @@
 * On Screen Display (OSD) - both character and pixel style
 * Telemetry: SmartPort, FPort, MAVlink, LTM
 * Multi-color RGB LED Strip support
-* Advanced gyro filtering: Matrix Filter and RPM filter (when it works)
+* Advanced gyro filtering: Matrix Filter and RPM filter
 * Logic Conditions, Global Functions and Global Variables: you can program INAV with a GUI
 * And many more!
 
