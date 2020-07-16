@@ -50,12 +50,12 @@
 #define USE_MPU_DATA_READY_SIGNAL
 
 // *************** Black Box ****************************
-#define M25P16_CS_PIN           PA0
-#define M25P16_SPI_BUS          BUS_SPI2
+#define M25P16_CS_PIN           PA0                     //Adding Black box chip slect 
+#define M25P16_SPI_BUS          BUS_SPI2                //Adding Black box SPI connection
 
-#define USE_FLASHFS
-#define USE_FLASH_M25P16
-#define ENABLE_BLACKBOX_LOGGING_ON_SPIFLASH_BY_DEFAULT
+#define USE_FLASHFS                                     //Enabling SPI flash
+#define USE_FLASH_M25P16                                
+#define ENABLE_BLACKBOX_LOGGING_ON_SPIFLASH_BY_DEFAULT  //Enabling SPI black box
 
 // *************** SPI2 OSD *****************************
 #define USE_SPI_DEVICE_2
