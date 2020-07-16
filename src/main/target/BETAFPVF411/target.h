@@ -105,8 +105,8 @@
 
 #else
 #define USE_SOFTSERIAL1
-#define SOFTSERIAL_1_TX_PIN     PA0 // ST1 pad
-#define SOFTSERIAL_1_RX_PIN     PA0
+#define SOFTSERIAL_1_TX_PIN     PB3 // ST1 pad
+#define SOFTSERIAL_1_RX_PIN     PB3
 #define SERIAL_PORT_COUNT       4
 #endif
 
