@@ -77,10 +77,11 @@
 #define UART1_TX_PIN            PA9
 #define UART1_RX_PIN            PA10
 
+/*
 #define USE_UART2
 #define UART2_TX_PIN            PA2
 #define UART2_RX_PIN            PA3
-
+*/
 #if defined(MATEKF411_SFTSRL2)
 #define USE_SOFTSERIAL1
 #define SOFTSERIAL_1_TX_PIN     PA0 // ST1 pad
@@ -115,29 +116,30 @@
 
 // *************** I2C /Baro/Mag/Pitot ********************
 #define USE_I2C
-#define USE_I2C_DEVICE_1
-#define I2C1_SCL                PB8
-#define I2C1_SDA                PB9
-
-#define DEFAULT_I2C_BUS         BUS_I2C1
+#define USE_I2C_DEVICE_EMULATED
+//#define I2C_DEVICE_EMULATED_SHARES_UART2
+#define SOFT_I2C
+#define SOFT_I2C_SCL            PA2 //TX2 pad
+#define SOFT_I2C_SDA            PA3 //RX2 pad
+#define DEFAULT_I2C_BUS         BUS_I2C_EMULATED
 
 #define USE_BARO
-#define BARO_I2C_BUS            BUS_I2C1
+#define BARO_I2C_BUS            BUS_I2C_EMULATED
 #define USE_BARO_BMP280
 #define USE_BARO_MS5611
 #define USE_BARO_BMP085
 
-#define TEMPERATURE_I2C_BUS     BUS_I2C1
+#define TEMPERATURE_I2C_BUS     BUS_I2C_EMULATED
 
 #define USE_MAG
-#define MAG_I2C_BUS             BUS_I2C1
+#define MAG_I2C_BUS             BUS_I2C_EMULATED
 #define USE_MAG_HMC5883
 #define USE_MAG_QMC5883
 #define USE_MAG_IST8310
 #define USE_MAG_MAG3110
 #define USE_MAG_LIS3MDL
 
-#define PITOT_I2C_BUS           BUS_I2C1
+#define PITOT_I2C_BUS           BUS_I2C_EMULATED
 
 // *************** ADC *****************************
 #define USE_ADC

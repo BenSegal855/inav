@@ -49,14 +49,6 @@
 #define GYRO_INT_EXTI            PA1
 #define USE_MPU_DATA_READY_SIGNAL
 
-// *************** Black Box ****************************
-#define M25P16_CS_PIN           PA0                     //Adding Black box chip slect 
-#define M25P16_SPI_BUS          BUS_SPI2                //Adding Black box SPI connection
-
-#define USE_FLASHFS                                     //Enabling SPI flash
-#define USE_FLASH_M25P16                                
-#define ENABLE_BLACKBOX_LOGGING_ON_SPIFLASH_BY_DEFAULT  //Enabling SPI black box
-
 // *************** SPI2 OSD *****************************
 #define USE_SPI_DEVICE_2
 #define SPI2_SCK_PIN            PB13
@@ -77,11 +69,10 @@
 #define UART1_TX_PIN            PA9
 #define UART1_RX_PIN            PA10
 
-/*
 #define USE_UART2
 #define UART2_TX_PIN            PA2
 #define UART2_RX_PIN            PA3
-*/
+
 #if defined(MATEKF411_SFTSRL2)
 #define USE_SOFTSERIAL1
 #define SOFTSERIAL_1_TX_PIN     PA0 // ST1 pad
@@ -116,30 +107,29 @@
 
 // *************** I2C /Baro/Mag/Pitot ********************
 #define USE_I2C
-#define USE_I2C_DEVICE_EMULATED
-//#define I2C_DEVICE_EMULATED_SHARES_UART2
-#define SOFT_I2C
-#define SOFT_I2C_SCL            PA2 //TX2 pad
-#define SOFT_I2C_SDA            PA3 //RX2 pad
-#define DEFAULT_I2C_BUS         BUS_I2C_EMULATED
+#define USE_I2C_DEVICE_1
+#define I2C1_SCL                PB8
+#define I2C1_SDA                PB9
+
+#define DEFAULT_I2C_BUS         BUS_I2C1
 
 #define USE_BARO
-#define BARO_I2C_BUS            BUS_I2C_EMULATED
+#define BARO_I2C_BUS            BUS_I2C1
 #define USE_BARO_BMP280
 #define USE_BARO_MS5611
 #define USE_BARO_BMP085
 
-#define TEMPERATURE_I2C_BUS     BUS_I2C_EMULATED
+#define TEMPERATURE_I2C_BUS     BUS_I2C1
 
 #define USE_MAG
-#define MAG_I2C_BUS             BUS_I2C_EMULATED
+#define MAG_I2C_BUS             BUS_I2C1
 #define USE_MAG_HMC5883
 #define USE_MAG_QMC5883
 #define USE_MAG_IST8310
 #define USE_MAG_MAG3110
 #define USE_MAG_LIS3MDL
 
-#define PITOT_I2C_BUS           BUS_I2C_EMULATED
+#define PITOT_I2C_BUS           BUS_I2C1
 
 // *************** ADC *****************************
 #define USE_ADC
@@ -161,7 +151,7 @@
 #define WS2811_PIN                      PA8
 #endif
 // ***************  OTHERS *************************
-#define DEFAULT_FEATURES        (FEATURE_TX_PROF_SEL | FEATURE_OSD | FEATURE_CURRENT_METER | FEATURE_VBAT | FEATURE_TELEMETRY | FEATURE_SOFTSERIAL | FEATURE_BLACKBOX)
+#define DEFAULT_FEATURES        (FEATURE_TX_PROF_SEL | FEATURE_OSD | FEATURE_CURRENT_METER | FEATURE_VBAT | FEATURE_TELEMETRY | FEATURE_SOFTSERIAL )
 
 #define USE_SPEKTRUM_BIND
 #define BIND_PIN                PA10 //  RX1
