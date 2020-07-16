@@ -19,7 +19,7 @@
 
 #define TARGET_BOARD_IDENTIFIER "BTFL"
 
-#define USBD_PRODUCT_STRING  "BetaFPVF114"
+#define USBD_PRODUCT_STRING  "BetaFPVF411"
 
 #define LED0                    PC13
 #define LED1                    PC14
