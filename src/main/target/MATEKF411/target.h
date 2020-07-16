@@ -118,8 +118,8 @@
 #define USE_I2C_DEVICE_EMULATED
 #define I2C_DEVICE_EMULATED_SHARES_UART2
 #define SOFT_I2C
-#define SOFT_I2C_SCL            PCA2 //TX2 pad
-#define SOFT_I2C_SDA            PCA3 //RX2 pad
+#define SOFT_I2C_SCL            PA2 //TX2 pad
+#define SOFT_I2C_SDA            PA3 //RX2 pad
 #define DEFAULT_I2C_BUS         BUS_I2C_EMULATED
 
 #define USE_BARO
