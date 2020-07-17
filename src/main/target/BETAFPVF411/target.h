@@ -105,10 +105,16 @@
 
 #else
 */
+
+/*
 #define USE_SOFTSERIAL1
 #define SOFTSERIAL_1_TX_PIN     PB3 // ST1 pad
 #define SOFTSERIAL_1_RX_PIN     PB10
-#define SERIAL_PORT_COUNT       4
+
+*/
+#define SERIAL_PORT_COUNT       3
+
+
 //#endif
 
 #define DEFAULT_RX_TYPE         RX_TYPE_SERIAL
@@ -118,10 +124,10 @@
 // *************** I2C /Baro/Mag/Pitot ********************
 #define USE_I2C
 #define USE_I2C_DEVICE_EMULATED
-#define I2C_DEVICE_EMULATED_SHARES_UART2
+//#define I2C_DEVICE_EMULATED_SHARES_UART2
 #define SOFT_I2C
-#define SOFT_I2C_SCL            PA2 //TX2 pad
-#define SOFT_I2C_SDA            PA3 //RX2 pad
+#define SOFT_I2C_SCL            PB3 //TX6 pad
+#define SOFT_I2C_SDA            PB10 //RX6 pad
 #define DEFAULT_I2C_BUS         BUS_I2C_EMULATED
 
 #define USE_BARO
