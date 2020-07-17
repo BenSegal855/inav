@@ -79,43 +79,16 @@
 
 
 #define USE_UART2
-#define UART2_TX_PIN            PA2
+#define UART2_TX_PIN            PA2 
 #define UART2_RX_PIN            PA3
-/*
-#if defined(MATEKF411_SFTSRL2)
-#define USE_SOFTSERIAL1
-#define SOFTSERIAL_1_TX_PIN     PA0 // ST1 pad
-#define SOFTSERIAL_1_RX_PIN     PA0
-#define USE_SOFTSERIAL2
-#define SOFTSERIAL_2_TX_PIN     PA8 // LED pad
-#define SOFTSERIAL_2_RX_PIN     PA8
-#define SERIAL_PORT_COUNT       5
 
-#elif defined(MATEKF411_FD_SFTSRL)
-#define USE_SOFTSERIAL1
-#define SOFTSERIAL_1_TX_PIN     PA0 // ST1 pad
-#define SOFTSERIAL_1_RX_PIN     PA8 // LED pad
-#define SERIAL_PORT_COUNT       4
-
-#elif defined(MATEKF411_RSSI)
-#define USE_SOFTSERIAL1
-#define SOFTSERIAL_1_TX_PIN     PA8 // LED pad
-#define SOFTSERIAL_1_RX_PIN     PA8
-#define SERIAL_PORT_COUNT       4
-
-#else
-*/
-
-/*
+/* Soft Serial is disabled as RX6 and TX6 are used in I2C
 #define USE_SOFTSERIAL1
 #define SOFTSERIAL_1_TX_PIN     PB3 // ST1 pad
 #define SOFTSERIAL_1_RX_PIN     PB10
-
 */
+
 #define SERIAL_PORT_COUNT       3
-
-
-//#endif
 
 #define DEFAULT_RX_TYPE         RX_TYPE_SERIAL
 #define SERIALRX_PROVIDER       SERIALRX_SBUS
@@ -124,10 +97,10 @@
 // *************** I2C /Baro/Mag/Pitot ********************
 #define USE_I2C
 #define USE_I2C_DEVICE_EMULATED
-//#define I2C_DEVICE_EMULATED_SHARES_UART2
+
 #define SOFT_I2C
-#define SOFT_I2C_SCL            PB3 //TX6 pad
-#define SOFT_I2C_SDA            PB10 //RX6 pad
+#define SOFT_I2C_SCL            PB3 //TX6 pad Used for I2C
+#define SOFT_I2C_SDA            PB10 //RX6 pad Used for I2C
 #define DEFAULT_I2C_BUS         BUS_I2C_EMULATED
 
 #define USE_BARO
