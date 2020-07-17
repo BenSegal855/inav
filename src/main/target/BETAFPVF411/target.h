@@ -81,7 +81,7 @@
 #define USE_UART2
 #define UART2_TX_PIN            PA2
 #define UART2_RX_PIN            PA3
-
+/*
 #if defined(MATEKF411_SFTSRL2)
 #define USE_SOFTSERIAL1
 #define SOFTSERIAL_1_TX_PIN     PA0 // ST1 pad
@@ -104,11 +104,12 @@
 #define SERIAL_PORT_COUNT       4
 
 #else
+*/
 #define USE_SOFTSERIAL1
 #define SOFTSERIAL_1_TX_PIN     PB4 // ST1 pad
 #define SOFTSERIAL_1_RX_PIN     PB3
 #define SERIAL_PORT_COUNT       4
-#endif
+//#endif
 
 #define DEFAULT_RX_TYPE         RX_TYPE_SERIAL
 #define SERIALRX_PROVIDER       SERIALRX_SBUS
