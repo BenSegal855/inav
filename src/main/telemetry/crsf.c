@@ -313,7 +313,7 @@ static void crsfFrameFlightMode(sbuf_t *dst)
     crsfSerialize8(dst, CRSF_FRAMETYPE_FLIGHT_MODE);
 
     // use same logic as OSD, so telemetry displays same flight text as OSD when armed
-    char *flightMode = "OK";
+    const char *flightMode = "OK";
     if (ARMING_FLAG(ARMED)) {
         if (STATE(AIRMODE_ACTIVE)) {
             flightMode = "AIR";
@@ -351,7 +351,8 @@ static void crsfFrameFlightMode(sbuf_t *dst)
         flightMode = "!ERR";
     }
 
-    sprintf(flightMode, "BEN");//, isArmingDisabledReason()); //Take this out when you are done experimenting
+    //sprintf(flightMode, "BEN");//, isArmingDisabledReason()); //Take this out when you are done experimenting
+    flightMode = "BEN";
     crsfSerializeData(dst, (const uint8_t*)flightMode, strlen(flightMode));
     crsfSerialize8(dst, 0); // zero terminator for string
     // write in the length
