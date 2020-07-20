@@ -290,13 +290,11 @@ int16_t     Yaw angle ( rad / 10000 )
 
 static void crsfFrameAttitude(sbuf_t *dst)
 {
-    int32_t flags = isArmingDisabledReason();
-
      sbufWriteU8(dst, CRSF_FRAME_ATTITUDE_PAYLOAD_SIZE + CRSF_FRAME_LENGTH_TYPE_CRC);
      crsfSerialize8(dst, CRSF_FRAMETYPE_ATTITUDE);
      crsfSerialize16(dst, DECIDEGREES_TO_RADIANS10000(attitude.values.pitch));
      crsfSerialize16(dst, DECIDEGREES_TO_RADIANS10000(attitude.values.roll));
-     crsfSerialize16(dst, DECIDEGREES_TO_RADIANS10000(attitude.values.yaw) );
+     crsfSerialize16(dst, DECIDEGREES_TO_RADIANS10000(attitude.values.yaw));
 }
 
 /*
