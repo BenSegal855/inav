@@ -351,7 +351,7 @@ static void crsfFrameFlightMode(sbuf_t *dst)
         flightMode = "!ERR";
     }
 
-    sprintf(flightMode, "BEN")//, isArmingDisabledReason()); //Take this out when you are done experimenting
+    sprintf(flightMode, "BEN");//, isArmingDisabledReason()); //Take this out when you are done experimenting
     crsfSerializeData(dst, (const uint8_t*)flightMode, strlen(flightMode));
     crsfSerialize8(dst, 0); // zero terminator for string
     // write in the length
