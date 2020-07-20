@@ -63,6 +63,7 @@ FILE_COMPILE_FOR_SPEED
 #include "telemetry/telemetry.h"
 #include "telemetry/msp_shared.h"
 
+#include "fc/runtime_config.h"
 
 #define CRSF_CYCLETIME_US                   100000  // 100ms, 10 Hz
 #define CRSF_DEVICEINFO_VERSION             0x01
@@ -288,11 +289,13 @@ int16_t     Yaw angle ( rad / 10000 )
 
 static void crsfFrameAttitude(sbuf_t *dst)
 {
+    int32_t flags = isArmingDisabledReason();
+
      sbufWriteU8(dst, CRSF_FRAME_ATTITUDE_PAYLOAD_SIZE + CRSF_FRAME_LENGTH_TYPE_CRC);
      crsfSerialize8(dst, CRSF_FRAMETYPE_ATTITUDE);
      crsfSerialize16(dst, DECIDEGREES_TO_RADIANS10000(attitude.values.pitch));
-     crsfSerialize16(dst, DECIDEGREES_TO_RADIANS10000(attitude.values.roll));
-     crsfSerialize16(dst, (int16_t)0);
+     crsfSerialize16(dst, falgs & 0xffff);  //Used to be roll sending bottom half
+     crsfSerialize16(dst, flags >> 16 );    //Used to be yaw sending top half
 }
 
 /*
